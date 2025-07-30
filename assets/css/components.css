@@ -1,0 +1,485 @@
+/* Component-specific styles */
+
+/* Resident Suggestions */
+.resident-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.resident-suggestion {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f7fafc;
+    transition: background-color 0.2s ease;
+}
+
+.resident-suggestion:hover {
+    background-color: #f7fafc;
+}
+
+.resident-suggestion:last-child {
+    border-bottom: none;
+}
+
+/* Form Group with relative positioning for suggestions */
+.form-group {
+    position: relative;
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+.message.success {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+}
+
+.message.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #feb2b2;
+}
+
+.message.info {
+    background: #bee3f8;
+    color: #2a4365;
+    border: 1px solid #90cdf4;
+}
+
+/* Admin Section Styles */
+.admin-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none;
+}
+
+.admin-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Status Management */
+.status-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.status-btn {
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.status-btn.open {
+    background: #48bb78;
+    color: white;
+}
+
+.status-btn.closed {
+    background: #f56565;
+    color: white;
+}
+
+.status-btn.warning {
+    background: #ed8936;
+    color: white;
+}
+
+.status-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Status Form */
+.status-form {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.status-form label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.status-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.status-form input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.status-form button {
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.status-form button:hover {
+    background: #5a67d8;
+    transform: translateY(-2px);
+}
+
+/* Incident Log */
+.incident-form {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.incident-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.incident-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.incident-date {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.incident-description {
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.incident-author {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-top: 0.5rem;
+}
+
+
+
+/* Notice Management */
+.notice-form {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.notice-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.notice-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.notice-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #ed8936;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notice-text {
+    font-weight: 500;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.notice-date {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.remove-btn {
+    background: #f56565;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.remove-btn:hover {
+    background: #e53e3e;
+    transform: translateY(-1px);
+}
+
+/* Occupancy Controls */
+.occupancy-controls {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.occupancy-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.occupancy-input input {
+    width: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.occupancy-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.occupancy-btn:hover {
+    background: #5a67d8;
+    transform: scale(1.1);
+}
+
+/* Checkout Section */
+.checkout-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.checkout-section h4 {
+    font-size: 1.1rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.checkout-list {
+    max-height: 300px;
+    overflow-y: auto;
+    background: #f7fafc;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-item:last-child {
+    margin-bottom: 0;
+}
+
+.checkout-info {
+    flex: 1;
+}
+
+.checkout-name {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1rem;
+}
+
+.checkout-id {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.checkout-time {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-top: 0.25rem;
+}
+
+.checkout-btn {
+    background: #f56565;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.checkout-btn:hover {
+    background: #e53e3e;
+    transform: translateY(-1px);
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    z-index: 1001;
+    animation: slideInRight 0.3s ease-in-out;
+    max-width: 300px;
+}
+
+.toast.success {
+    background: #48bb78;
+}
+
+.toast.error {
+    background: #f56565;
+}
+
+.toast.info {
+    background: #4299e1;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Confirmation Dialog */
+.confirm-dialog {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 400px;
+    margin: 20vh auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.confirm-dialog h3 {
+    margin-bottom: 1rem;
+    color: #2d3748;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.confirm-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-btn.danger {
+    background: #f56565;
+    color: white;
+}
+
+.confirm-btn.cancel {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+} 

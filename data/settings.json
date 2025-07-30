@@ -1,0 +1,19 @@
+{
+  "adminPin": "1234",
+  "maxOccupancy": 50,
+  "maxGuestsPerResident": 5,
+  "sessionTimeout": 300000,
+  "autoBackup": true,
+  "backupInterval": 3600000,
+  "poolName": "Community Pool",
+  "poolHours": {
+    "open": "13:00",
+    "close": "20:00"
+  },
+  "features": {
+    "qrGenerator": false,
+    "incidentLogging": true,
+    "noticeManagement": true,
+    "occupancyTracking": true
+  }
+} 

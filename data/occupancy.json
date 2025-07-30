@@ -1,0 +1,12 @@
+{
+  "currentCount": 0,
+  "maxCount": 50,
+  "currentlyCheckedIn": [],
+  "today": {
+    "date": "",
+    "totalCheckins": 0,
+    "peakOccupancy": 0,
+    "checkins": []
+  },
+  "history": []
+} 

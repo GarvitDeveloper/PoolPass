@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoolPass - Community Pool Kiosk</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">🏊‍♂️ PoolPass</h1>
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-text" id="statusText">Open</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Home Screen -->
+        <section id="homeScreen" class="screen active">
+            <div class="occupancy-display">
+                <h2>Current Occupancy</h2>
+                <div class="occupancy-counter">
+                    <span id="occupancyCount">0</span>
+                    <span class="occupancy-label">residents</span>
+                </div>
+                <div class="currently-checked-in" id="currentlyCheckedIn">
+                    <h3>Currently Checked In</h3>
+                                    <div class="checked-in-list" id="checkedInList">
+                    <p class="no-checkins">No one currently checked in</p>
+                </div>
+                <div class="logout-section">
+                    <h3>Check Out</h3>
+                    <div class="logout-form">
+                        <input type="text" id="logoutPoolPassId" placeholder="Enter your Pool Pass ID to check out">
+                        <button class="logout-btn" onclick="Checkin.logoutResident()">Check Out</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <button class="action-btn primary" onclick="showScreen('checkinScreen')">
+                    <span class="btn-icon">📝</span>
+                    Check In
+                </button>
+                <button class="action-btn secondary" onclick="showScreen('rulesScreen')">
+                    <span class="btn-icon">📋</span>
+                    Rules & Notices
+                </button>
+                <button class="action-btn admin" onclick="showAdminPanel()">
+                    <span class="btn-icon">⚙️</span>
+                    Admin Panel
+                </button>
+            </div>
+
+            <div class="notice-banner" id="noticeBanner" style="display: none;">
+                <div class="notice-content">
+                    <span class="notice-icon">⚠️</span>
+                    <span id="noticeText"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Check-In Screen -->
+        <section id="checkinScreen" class="screen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showScreen('homeScreen')">← Back</button>
+                <h2>Check In</h2>
+            </div>
+            
+            <div class="checkin-form">
+                <div class="form-group">
+                    <label for="poolPassId">Pool Pass ID</label>
+                    <input type="text" id="poolPassId" placeholder="Enter your Pool Pass ID (e.g., PP001)">
+                    <div class="resident-suggestions" id="residentSuggestions"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestCount">Number of Guests</label>
+                    <input type="number" id="guestCount" min="0" max="10" value="0">
+                </div>
+                
+                <button class="submit-btn" onclick="submitCheckin()">Check In</button>
+            </div>
+        </section>
+
+        <!-- Rules & Notices Screen -->
+        <section id="rulesScreen" class="screen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showScreen('homeScreen')">← Back</button>
+                <h2>Rules & Notices</h2>
+            </div>
+            
+            <div class="rules-content">
+                <div class="rules-section">
+                    <h3>Pool Rules</h3>
+                    <div id="poolRules" class="rules-list"></div>
+                </div>
+                
+                <div class="notices-section">
+                    <h3>Current Notices</h3>
+                    <div id="currentNotices" class="notices-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel Screen -->
+        <section id="adminScreen" class="screen">
+            <div class="screen-header">
+                <button class="back-btn" onclick="showScreen('homeScreen')">← Back</button>
+                <h2>Admin Panel</h2>
+            </div>
+            
+            <div class="admin-actions">
+                <button class="admin-btn" onclick="showAdminSection('status')">
+                    <span class="btn-icon">🚧</span>
+                    Pool Status
+                </button>
+                <button class="admin-btn" onclick="showAdminSection('incidents')">
+                    <span class="btn-icon">📝</span>
+                    Incident Log
+                </button>
+                <button class="admin-btn" onclick="showAdminSection('qr')">
+                    <span class="btn-icon">📱</span>
+                    QR Generator
+                </button>
+                <button class="admin-btn" onclick="showAdminSection('notices')">
+                    <span class="btn-icon">📢</span>
+                    Manage Notices
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Admin PIN Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content">
+            <h3>Admin Access Required</h3>
+            <div class="pin-input">
+                <input type="password" id="adminPin" placeholder="Enter PIN" maxlength="4">
+                <button onclick="verifyAdminPin()">Enter</button>
+            </div>
+            <button class="cancel-btn" onclick="closeAdminModal()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/checkin.js"></script>
+            <script src="assets/js/admin.js"></script>
+    </body>
+</html> 
